@@ -12,42 +12,45 @@
 
 <table data-th-object="${order}" style="margin-botton: 3vh;">
     <tr>
-        <td>Invoice id:</td>
+        <td>Order id:</td>
         <td>
             <span data-th-text="*{id}"></span>
         </td>
     </tr>
     <tr>
-        <td>Name:</td>
+        <td>Date:</td>
         <td>
             <span data-th-text="*{orderDate}"></span>
         </td>
     </tr>
     <tr>
-        <td>Address:</td>
+        <td>Customer ID:</td>
         <td>
             <span data-th-text="*{customerId}"></span>
         </td>
     </tr>
     <tr>
-        <td>Total:</td>
+        <td>Total Price:</td>
         <td>
             <span data-th-text="*{totalPrice}"></span>
         </td>
     </tr>
     <tr>
-        <td>Total:</td>
+        <td>Cost Price:</td>
         <td>
             <span data-th-text="*{costPrice}"></span>
         </td>
     </tr>
     <tr>
-        <td>Total:</td>
+        <td>Total Discount:</td>
         <td>
             <span data-th-text="*{discount}"></span>
         </td>
     </tr>
 </table>
+
+<!-- back button -->
+<a href="/order/total">Back</a>
 
 
 </body>

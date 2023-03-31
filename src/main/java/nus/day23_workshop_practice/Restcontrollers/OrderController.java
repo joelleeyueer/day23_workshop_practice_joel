@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,13 +18,20 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/search")
-    public String getIndex() {
+    @GetMapping
+    public String getIndex(Model model) {
+        model.addAttribute("searchPath", "search");
         return "index";
     }
 
-    @GetMapping("/")
-    public String getTotalPrice(@RequestParam("order_id") int id, Model model) {
+
+    @GetMapping("/search")
+    public String forwarder(@RequestParam("order_id") String order_id) {
+        return "redirect:/order/total/" + order_id;
+    }
+
+    @GetMapping("/{id}")
+    public String getTotalPrice(@PathVariable("id") int id, Model model) {
     //     private int id;
     // private LocalDateTime orderDate;
     // private int customerId;

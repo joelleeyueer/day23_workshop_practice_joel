@@ -16,13 +16,11 @@
 
     </form> -->
 
-    <!-- <form th:action="@{/order/total/{id}(id = ${order_id})}" method="get"> -->
-        <form th:action="@{/order/total/__${searchPath}__}" method="get">
-            <label for="order-id">Enter an order ID:</label>
-            <input type="number" id="order-id" name="order_id">
-            <button type="submit">Search</button>
-        </form>
-        
+    <form th:action="@{/order/total/{id}(id = ${order_id})}" method="get">
+		<label for="order-id">Enter an order ID:</label>
+		<input type="number" id="order-id" name="order_id">
+		<button type="submit">Search</button>
+	</form>
       
     </body>
 </html>
